@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/fetch.js"></script>
+    <script src="scripts/common.js"></script>
+
+    <title>Log in page</title>
+</head>
+
+<body>
+    <common-header></common-header>
+    <form class="log-in-form">
+        <p class="warning red bold" id="loginWarning"></p>
+        <div class="credentials">
+            <label for="name" class="font-2 bold user-select">Name</label>
+            <input class="field" type="text" name="name" id="loginName" placeholder="Full Name" autocomplete="off"
+                required>
+            <label for="password" class="font-2 bold user-select">Password</label>
+            <input class="field" type="password" name="password" id="loginPassword" placeholder="Password"
+                autocomplete="off" required>
+        </div>
+        <button class="font-2 bold" id="login" type="button" onclick="logIn()">Log In</button>
+    </form>
+</body>
+
+</html>

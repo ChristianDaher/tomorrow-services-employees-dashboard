@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/validation.js" defer></script>
+    <script src="scripts/sort-filter.js" defer></script>
+    <script src="scripts/fetch.js"></script>
+    <script src="scripts/common.js"></script>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <common-header></common-header>
+
+    <dialog id="deleteUserDialog" class="popup">
+        <div class="close">&times;</div>
+        <div class="popup-content">
+            <div class="container">
+                <h2 class="font-2">Delete Account</h2>
+                <p class="account"></p>
+                <div>
+                    <button class="btn cancel-btn">Cancel</button>
+                    <button class="btn delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="createUpdateDialog" class="popup">
+        <div class="close">&times;</div>
+        <form class="popup-content" id="form">
+            <h2 class="font-2 title"></h2>
+            <strong class="red bold warning"></strong>
+            <div class="container">
+                <span id="update-picture" class="span-picture"></span>
+                <span class="grid span-status">
+                    <label for="status" class="label">Status</label>
+                    <input class="checkbox" type="checkbox" name="status" id="update-status">
+                </span>
+                <span class="grid">
+                    <label for="name" class="label">Full name</label>
+                    <input class="field" type="text" name="name" id="name" placeholder="Christian Daher"
+                        autocomplete="username" required>
+                </span>
+                <span class="grid">
+                    <label for="age" class="label">Age</label>
+                    <input class="field" type="number" name="age" id="age" placeholder="24" required>
+                </span>
+                <span class="grid">
+                    <label for="position" class="label">Position</label>
+                    <input class="field" type="text" name="position" id="position" placeholder="Software Engineer"
+                        autocomplete="username" required>
+                </span>
+                <span class="grid">
+                    <label for="date" class="label">Date</label>
+                    <input class="field" type="date" name="date" id="date" value="2022-09-07" required>
+                </span>
+                <span class="grid">
+                    <label for="password" class="label">Password</label>
+                    <input class="field" type="password" name="password" id="password" placeholder="Password"
+                        autocomplete="new-password" required>
+                </span>
+                <span class="grid">
+                    <label for="confirm-password" class="label">Confirm password</label>
+                    <input class="field" type="password" name="confirm-password" id="confirm-password"
+                        autocomplete="current-password" placeholder="Confirm Password" required>
+                </span>
+                <span class="grid">
+                    <label class="label">Gender</label>
+                    <span>
+                        <input type="radio" class="gender-radio" name="gender" value="male" id="gender-male">
+                        <label for="gender-male">Male</label>
+                        <input type="radio" class="gender-radio" name="gender" value="female" id="gender-female"
+                            checked>
+                        <label for="gender-female">Female</label>
+                    </span>
+                </span>
+                <span class="grid">
+                    <label class="label">Is an admin</label>
+                    <span>
+                        <input type="radio" class="admin-radio" name="admin" value="true" id="admin-yes">
+                        <label for="admin-yes">Yes</label>
+                        <input type="radio" class="admin-radio" name="admin" value="false" id="admin-no" checked>
+                        <label for="admin-no">No</label>
+                    </span>
+                </span>
+                <div>
+                    <button type="button" class="btn cancel-btn">Cancel</button>
+                    <button type="button" class="btn create-update-btn"></button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+
+    <section class="mid" id="mid">
+        <div class="fixed flex-center">
+            <span class="title">
+                <h2 class="font-2">USERS</h2>
+            </span>
+            <span class="options flex-center">
+                <select id="select" class="select">
+                    <option disabled selected hidden>Sort by...</option>
+                    <option>All</option>
+                </select>
+                <input type="text" id="searchBar" class="searchBar" placeholder="Search for anything...">
+                <img src="images/add.svg" alt="add" class="add" id="add">
+                <img src="images/edit.svg" alt="edit" class="edit" id="edit">
+                <img src="images/refresh.svg" alt="refresh" class="refresh" id="refresh">
+            </span>
+        </div>
+
+        <table class="table" id="table">
+            <thead>
+                <tr class="table-header">
+                    <th class="picture"><img src="images/profile.svg" alt="profile"
+                            class="center user-select filter-white-to-grey big">
+                    </th>
+                    <th class="status">Status</th>
+                    <th class="name sort">Name</th>
+                    <th class="age sort">Age</th>                          
+                    <th class="position sort">Position</th>
+                    <th class="gender sort">Gender</th>
+                    <th class="date sort">Date of Employment</th>
+                    <th class="last"></th>
+                </tr>
+            </thead>
+            <tbody class="table-body"></tbody>
+        </table>
+    </section>
+</body>
+
+</html>
