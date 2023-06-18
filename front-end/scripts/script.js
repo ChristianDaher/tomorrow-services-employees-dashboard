@@ -90,7 +90,7 @@ categories.forEach(category => {
 
 function insertTable() {
     deleteTable();
-    getUsers(USERS_URL).then(() => { for (let user of users) createRow(user) }).catch(() => location.assign("http://localhost:5500/employees-dashboard/employees-dashboard/index.html"))
+    getUsers(USERS_URL).then(() => { for (let user of users) createRow(user) }).catch(() => location.assign("http://localhost:5500/front-end/index.html"))
 }
 
 function createRow(element) {

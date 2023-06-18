@@ -18,7 +18,7 @@ function logIn() {
                 window.localStorage.setItem('token', token);
                 loggedInUser = response.user;
                 localStorage.setItem('user', JSON.stringify(loggedInUser));
-                location.assign("http://localhost:5500/employees-dashboard/employees-dashboard/home.html");
+                location.assign("http://localhost:5500/front-end/home.html");
             }
             else loginWarning.textContent = response;
         })

@@ -28,5 +28,5 @@ customElements.define('common-header', CommonHeader)
 function logOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    location.assign("http://localhost:5500/employees-dashboard/employees-dashboard/index.html");
+    location.assign("http://localhost:5500/front-end/index.html");
 }
